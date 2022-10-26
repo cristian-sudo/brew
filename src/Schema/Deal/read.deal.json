@@ -1,0 +1,20 @@
+{
+  "required": ["name", "description", "dealCondition", "price", "id"],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "dealCondition": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "id": {
+      "type": "number"
+    }
+  }
+}

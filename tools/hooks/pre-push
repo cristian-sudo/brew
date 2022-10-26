@@ -1,0 +1,3 @@
+#!/bin/bash
+
+make non-i=true analyse

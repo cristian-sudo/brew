@@ -1,0 +1,28 @@
+{
+  "required": ["email", "firstName", "lastName", "status", "roles", "id"],
+  "properties": {
+    "email": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "status": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "id": { "type":  "number" }
+      }
+    },
+    "roles": {
+      "type": "array",
+      "items": { "type": "string"}
+    },
+    "id": {
+      "type": "number"
+    }
+  }
+}

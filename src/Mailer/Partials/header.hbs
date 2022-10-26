@@ -1,0 +1,67 @@
+<head>
+  <title>Intercambio</title>
+  <style>
+    .email_container {
+      padding: 2px 7px;
+      margin: 5px;
+    }
+    .email_container > div {
+      padding-bottom: 5px;
+    }
+    p {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    h4 {
+      margin: 0;
+    }
+    .button-container {
+      padding: 25px 5px;
+      height: 50px;
+      width: auto;
+    }
+    .button-container > a {
+      height: 100%;
+      width: fit-content;
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      color: white;
+      transition: 0.5s;
+    }
+    .button-container > a > div {
+      height: 100%;
+      padding: 0 10px;
+      border-radius: 5px;
+      background-color: cornflowerblue;
+      display: grid;
+      place-items: center;
+      border: 1px solid #b9d3ff
+    }
+    .button-container > a > div:hover {
+      opacity: 0.7;
+    }
+    .link_container {
+      margin-top: 10px;
+    }
+    .link_container > a {
+      text-decoration: none;
+      color: black;
+    }
+    .link_container > a > h3 {
+      color: black;
+      font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    }
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+
+<body>
+<div class="email_container">
+  <div class="email_header">
+    <p>Hello<b> {{name}},</b></p>
+  </div>
+</div>

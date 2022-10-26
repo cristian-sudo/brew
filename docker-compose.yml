@@ -1,0 +1,53 @@
+version: '3.9'
+
+services:
+    node:
+        build:
+            context: ./
+            dockerfile: ./docker/Dockerfile
+        environment:
+            NODE_ENV: ${NODE_ENV}
+            DATABASE_TEST_HOST: db_test
+        volumes:
+            - ./:/usr/src/app/
+        ports:
+            - "3000:3000"
+
+    db:
+        image: mysql:8.0.26
+        command: mysqld --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+        environment:
+            MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${DATABASE_NAME}
+            MYSQL_USER: ${DATABASE_USER}
+            MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+        cap_add:
+            - SYS_NICE
+        volumes:
+            - db-data:/var/lib/mysql:rw
+
+    db_test:
+        image: mysql:8.0.26
+        command: mysqld --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+        environment:
+            MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${DATABASE_NAME}
+            MYSQL_USER: ${DATABASE_USER}
+            MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+        volumes:
+            - db-test-data:/var/lib/mysql:rw
+        cap_add:
+            - SYS_NICE
+
+    maildev:
+        image: maildev/maildev
+        ports:
+            - target: 1025
+              published: 1025
+            - target: 1080
+              published: 1080
+
+volumes:
+    db-data:
+    db-test-data:
+

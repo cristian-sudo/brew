@@ -1,0 +1,40 @@
+{
+  "required": ["message", "statusCode", "path", "violations"],
+  "additionalProperties": false,
+  "properties": {
+    "message": {
+      "type": "string",
+      "value": "Validation Exception"
+    },
+    "statusCode": {
+      "type": "number",
+      "value": 422
+    },
+    "path": {
+      "type": "string"
+    },
+    "violations": {
+      "type": "array",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "detail",
+        "violations"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        },
+        "violations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

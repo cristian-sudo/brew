@@ -1,0 +1,17 @@
+{
+  "required": ["user_id", "expires_in", "access_token", "refresh_token"],
+  "properties": {
+    "user_id": {
+      "type": "number"
+    },
+    "expires_in": {
+      "type": "number"
+    },
+    "access_token": {
+      "type": "string"
+    },
+    "refresh_token": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{{> header }}
+<div  class="email_body">
+  <div>
+    <p>The csv file is ready to be downloaded.</p>
+
+{{#if filters}}
+<table style="width:100%">
+
+  {{#if user}}
+    <tr>
+      <th>User ID:</th>
+      <td>{{user}}</td>
+    </tr>
+  {{/if}}
+
+  {{#if start}}
+    <tr>
+      <th>Start date:</th>
+      <td>{{start}}</td>
+    </tr>
+  {{/if}}
+
+  {{#if end}}
+    <tr>
+      <th>End date:</th>
+      <td>{{end}}</td>
+    </tr>
+  {{/if}}
+
+</table>
+
+{{/if}}
+    <p>Press the link to Download the file.</p>
+  </div>
+  <div class="button-container">
+    <a href="{{domain}}api/admin/deal/csv/download/{{id}}">
+      <div>
+        <h4><b>Download</b></h4>
+      </div>
+    </a>
+  </div>
+</div>
+{{> footer }}
